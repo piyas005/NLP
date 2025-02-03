@@ -1,3 +1,8 @@
+import PyPDF2
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+from  datetime import  datetime
+
 # person = "John";
 # print("my name is {}".format(person));
 # print(f"my name is {person}");
@@ -23,15 +28,11 @@
 # myfile.seek(0);
 # myfile.close()
 
-# # myfile = open('e:/NLP/text.txt', 'w+')
+# myfile = open('e:/NLP/text.txt', 'w+')
 # myfile = open('e:/NLP/text.txt', 'a+')
 # contennt=myfile.write('my new text');
 # print(contennt)
 # myfile.close()
-
-import PyPDF2
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
 
 # myfile = open('e:/NLP/sample.pdf','rb')
 # pdf_reader = PyPDF2.PdfReader(myfile)
@@ -40,15 +41,15 @@ sys.stdout.reconfigure(encoding='utf-8')
 # mytext=print(page_one.extract_text())
 # myfile.close()
 
-# f = open('e:/NLP/sample.pdf', 'rb')
-# pdf_reader = PyPDF2.PdfReader(f)
-# first_page = pdf_reader.pages[0]
-# pdf_writer = PyPDF2.PdfWriter()
-# pdf_writer.add_page(first_page)
-# pdf_output = open('e:/NLP/NewPDF.pdf','wb')
-# pdf_writer.write(pdf_output)
-# pdf_output.close()
-# f.close()
+f = open('e:/NLP/sample.pdf', 'rb')
+pdf_reader = PyPDF2.PdfReader(f)
+first_page = pdf_reader.pages[0]
+pdf_writer = PyPDF2.PdfWriter()
+pdf_writer.add_page(first_page)
+pdf_output = open('e:/NLP/NewPDF.pdf','wb')
+pdf_writer.write(pdf_output)
+pdf_output.close()
+f.close()
 
 f = open('e:/NLP/PythonTextBasics/sample.pdf', 'rb')
 pdf_text = []
@@ -59,3 +60,4 @@ for num in range(len(pdf_reader.pages)):
     pdf_text.append(text)
 print(pdf_text)
 f.close()
+# this is just a commit command to execute 
